@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="root"></div> 
+    <script type="text/babel">
+
+        // let ele=document.createElement("h1");
+        // ele.innerHTML="hello this is dom";
+
+        // let root=document.getElementById("root");
+        // console.log(ele);
+        // root.appendChild(ele);
+
+
+        // let h2=React.createElement("h2",{
+        //     children:["hello is is h2 tag which is create by react"]
+        // })
+        // // console.log(h2);
+
+        // let ele =React.createElement("h1",{
+        //     children:["hello this is react",h2]
+        // })
+        // console.log(ele);
+
+        // const root =ReactDOM.createRoot(document.getElementById('root'));
+        // root.render(ele);
+        // // const roots =ReactDOM.createRoot(document.getElementById('roots'));
+        // // root.render(h2);
+
+        function Myh1(){
+            return (  //jsx starts 
+                <h1>Hello this is h1 tag</h1>
+            )
+        }
+        function Myh2(){
+            return (  //jsx starts 
+                <h1>Hello this is h2 tag</h1>
+            )
+        }
+
+        function Parent(){
+            return (
+                <React.Fragment>
+                    <Myh1/>
+                    <Myh2/>
+                    <WelcomeMsg name="ayush chaudhary " place="meerut"/>
+                    <PrintFun name="modi " place="gujrat"/>
+
+                    </React.Fragment>
+            )
+        }
+     
+        function WelcomeMsg (prop) {
+            return(
+                <h1>hello {prop.name}from {prop.place}</h1>
+            )
+        }
+          function PrintFun(fucn){
+            return (
+                <h1>heelo {fucn.name} form {fucn.place}</h1>
+            )
+          }   
+        
+        
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Myh1 />);
+        root.render(<Parent />);
+
+       
+        
+
+
+
+    </script>
+
+
+   
+
+</body>
+</html>
